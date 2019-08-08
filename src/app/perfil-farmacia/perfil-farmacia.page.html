@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      {{farmacia.nombre}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card  >
+    <img  src="{{url}}/{{farmacia.direccion_banner}}"alt=""  />
+      <ion-card-header>
+        <ion-card-subtitle>distancia</ion-card-subtitle>
+        <ion-card-title>{{farmacia.nombre}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Dirección: {{farmacia.direccion}}</p>
+        <p>Indicación: {{farmacia.indicaciones}}</p>
+        <p>Nit: {{farmacia.nit}}</p>
+        
+        <ion-list lines="none">
+            <ion-list-header>
+                <ion-badge color="light"> {{farmacia.calificacion}}
+                    <ion-icon name="star"></ion-icon>
+                </ion-badge>
+                <ion-badge color="light">Cal. {{farmacia.ranking}}
+                    <ion-icon name="star"></ion-icon>
+                </ion-badge>
+            </ion-list-header>
+            <ion-item  >
+              <ion-icon slot="start" color="medium" name="mail"></ion-icon>
+              <ion-label> {{farmacia.correo}}</ion-label>
+            </ion-item>
+            <ion-item  >
+                <ion-icon slot="start" color="medium" name="time"></ion-icon>
+                <ion-label> {{farmacia.abierto_cerrado}}</ion-label>
+              </ion-item>
+              <ion-item  >
+                  <ion-icon slot="start" color="medium" name="clock"></ion-icon>
+                  <ion-label> {{farmacia.turno}}</ion-label>
+                </ion-item>
+            <ion-button   color="success"  (click)="llamar();">
+                <ion-icon name="call">
+                </ion-icon>{{farmacia.telefono}}
+              </ion-button>
+            
+          </ion-list>
+      </ion-card-content>
+  </ion-card>
+</ion-content>
